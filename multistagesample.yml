@@ -23,7 +23,7 @@ stages:
     - checkout: none
     - script: echo B!
   - job: B2
-    dependsOn: Aj
+    dependsOn: B
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
