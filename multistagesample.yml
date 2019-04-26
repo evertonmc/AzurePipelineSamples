@@ -4,9 +4,9 @@
 # https://aka.ms/yaml
 
 stages:
-- stage: A
+- stage: As
   jobs:
-  - job: A
+  - job: Aj
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
@@ -14,7 +14,7 @@ stages:
     - script: echo A!
 
 - stage: B
-  dependsOn: A
+  dependsOn: Aj
   jobs:
   - job: B
     pool:
@@ -24,7 +24,7 @@ stages:
     - script: echo B!
 
 - stage: C
-  dependsOn: A
+  dependsOn: As
   jobs:
   - job: C
     condition: eq(variables['Build.SourceBranch'], 'refs/heads/releases')
