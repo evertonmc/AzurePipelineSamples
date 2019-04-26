@@ -17,6 +17,12 @@ stages:
   dependsOn: As
   jobs:
   - job: B
+    pool:
+      vmImage: 'Ubuntu 16.04'
+    steps:
+    - checkout: none
+    - script: echo B!
+  - job: B2
     dependsOn: Aj
     pool:
       vmImage: 'Ubuntu 16.04'
